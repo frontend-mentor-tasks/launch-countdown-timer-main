@@ -15,7 +15,7 @@ export default function FlipBottom({number, flipTime}) {
     setTimeout(() => {
       setDelayedValue(value);
     }, flipTime);
-  }, [value]);
+  }, [value, flipTime]);
 
   return (
     <div className="FlipBottom">
