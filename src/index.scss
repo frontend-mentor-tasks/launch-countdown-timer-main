@@ -1,0 +1,13 @@
+@import "./styles/variables";
+
+html {
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Red Hat Text', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $veryDarkBlue;
+}

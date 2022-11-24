@@ -1,0 +1,170 @@
+@import "../styles/variables";
+
+.FlipCard {
+  &__text {
+    color: $grayishBlue;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.4rem;
+    margin: 1rem 0 0;
+    @media screen and (min-width: 632px) {
+      font-size: 0.75rem;
+      margin: 1.45rem 0 0;
+      letter-spacing: 5px;
+    }
+  }
+}
+
+.FlipTop {
+  position: relative;
+  width: 55px;
+  height: 28px;
+  color: $softRed;
+  font-size: 2rem;
+  margin: 0 0.5rem;
+  perspective: $perspective;
+  box-sizing: border-box;
+  &__leaf {
+    position: absolute;
+    inset: 0;
+    top: 1px;
+    border-radius: $borderRadius;
+    padding-top: 0.5rem;
+    background-color: $darkDesaturatedBlue;
+    filter: brightness(0.8);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    transform-origin: 50% 100%;
+    overflow: hidden;
+    line-height: 1.45;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.01);
+    @media screen and (min-width: 632px) {
+      line-height: 1.68;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: $paperHole;
+      height: $paperHole;
+      background-color: $veryDarkBlue;
+      border-top-right-radius: 100%;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      right: 0;
+      width: $paperHole;
+      height: $paperHole;
+      background-color: $veryDarkBlue;
+      border-top-left-radius: 100%;
+    }
+  }
+  &__prev {
+    animation-name: flip;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+
+.FlipBottom {
+  position: relative;
+  width: 55px;
+  height: 28px;
+  color: $softRed;
+  font-size: 2rem;
+  margin: 0 0.5rem;
+  perspective: $perspective;
+  box-sizing: border-box;
+  &::after {
+    $shadowHeight: 1rem;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    bottom: $shadowHeight * -0.25;
+    height: $shadowHeight * 0.5;
+    width: 100%;
+    background-color: $veryDarkMostlyBlackBlue;
+    border-bottom-left-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+    @media screen and (min-width: 632px) {
+      bottom: $shadowHeight * -0.5;
+      height: $shadowHeight;
+    }
+  }
+  &__leaf {
+    position: absolute;
+    inset: 0;
+    margin-top: 0;
+    border-radius: $borderRadius;
+    background-color: $darkDesaturatedBlue;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    transform-origin: 50% 0;
+    overflow: hidden;
+    line-height: 0;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: $paperHole;
+      height: $paperHole;
+      background-color: $veryDarkBlue;
+      border-bottom-right-radius: 100%;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: -2px;
+      right: 0;
+      width: $paperHole;
+      height: $paperHole;
+      background-color: $veryDarkBlue;
+      border-bottom-left-radius: 100%;
+    }
+  }
+  &__prev {
+    animation-name: flipBottom;
+    animation-timing-function: linear;
+    border-bottom: 1px solid $veryDarkBlue;
+  }
+}
+
+@keyframes flipBottom {
+  0% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@media screen and (min-width: 632px) {
+  .FlipTop {
+    width: 110px;
+    height: 55px;
+    font-size: 4rem;
+    margin-inline: 1rem;
+  }
+  .FlipBottom {
+    width: 110px;
+    height: 55px;
+    font-size: 4rem;
+    margin-inline: 1rem;
+  }
+}

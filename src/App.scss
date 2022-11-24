@@ -1,0 +1,42 @@
+@import "./styles/variables";
+
+.App {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("./illustrations/bg-stars.svg");
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-width: 1440px;
+    min-height: 196px;
+    background-image: url("./illustrations/pattern-hills.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &__title {
+    color: $white;
+    text-align: center;
+    margin: 8rem 1rem 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+  }
+  &__timer {
+    display: flex;
+    justify-content: center;
+    margin-top: 6rem;
+  }
+  &__social {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 14.5rem;
+    margin-bottom: 5rem;
+  }
+}
