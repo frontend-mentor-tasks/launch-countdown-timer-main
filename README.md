@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [On Frontend Mentor](https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-/hub/launch-countdown-timer-82DIHpXgPQ)
+- Solution URL: [On Frontend Mentor](https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-/hub/launch-countdown-timer-main-react-scss-bem-W_CoSHoSQJ)
 - Live Site URL: [On Netlify](https://bqardi-launch-countdown-timer-main.netlify.app/)
 - The code: [On Github](https://github.com/frontend-mentor-tasks/launch-countdown-timer-main)
 
